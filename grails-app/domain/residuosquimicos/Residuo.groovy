@@ -12,7 +12,6 @@ class Residuo {
         nome blank:false, nullable: false
         composicao blank:false, nullable: false
         peso nullable: false
-        pessoaGerador blank:false, nullable: false
         dataCadastro nullable:false
         laboratorio nullable:false
     }

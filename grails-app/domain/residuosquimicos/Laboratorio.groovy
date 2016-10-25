@@ -1,9 +1,12 @@
 package residuosquimicos
+import src.groovy.CentroList
+import src.groovy.DepartamentoList
+import src.groovy.LaboratorioList
 
 class Laboratorio {
-    String nomeCentro
-    String nomeDepartamento
-    String nomeLaboratorio
+    CentroList nomeCentro
+    DepartamentoList nomeDepartamento
+    LaboratorioList nomeLaboratorio
     String responsavel
     static hasMany = [residuos:Residuo]
 
