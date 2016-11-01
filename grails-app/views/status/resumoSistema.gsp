@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Resumo do Sistema</title>
+    <meta name="layout" content="main">
+    <title><g:message code="default.title.page.resumoSistema" /></title>
 </head>
 <body>
 <div id="resumo-content" class="content scaffold-list" role="main">
@@ -40,7 +41,7 @@
         </table>
     </g:if>
     <g:else>
-        <label> O sistema ainda não possui laboratorios para exibir ou os laboratórios cadastrados não possuem resíduos cadastrados</label>
+        <label id="errorMessage">O sistema ainda não possui laboratorios para exibir ou os laboratórios cadastrados não possuem resíduos cadastrados</label>
     </g:else>
 
 

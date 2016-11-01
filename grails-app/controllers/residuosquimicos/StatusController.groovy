@@ -9,7 +9,6 @@ class StatusController {
         if(eNecessarioColeta()){
             statusGeral = "Uma licitaçao é necessaria para recolher os Residuos nos Laboratorios"
         }
-        println Laboratorio.all.findAll {!it.residuos.isEmpty()}
         [statusGeral:statusGeral, laboratorios:Laboratorio.all.findAll {!it.residuos.isEmpty()}]
     }
 

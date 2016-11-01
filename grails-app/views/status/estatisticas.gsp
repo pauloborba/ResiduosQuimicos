@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Estatísticas</title>
+    <meta name="layout" content="main">
+    <title><g:message code="default.title.page.estatisticas" /></title>
 </head>
 <body>
 <div id="percent-content" class="content scaffold-list" role="main">
