@@ -41,7 +41,7 @@
         </table>
     </g:if>
     <g:else>
-        <label id="errorMessage">O sistema ainda não possui laboratorios para exibir ou os laboratórios cadastrados não possuem resíduos cadastrados</label>
+        <label id="errorMessage">O sistema ainda não possui labóratorios para exibir ou os laboratórios não possuem resíduos cadastrados</label>
     </g:else>
 
 

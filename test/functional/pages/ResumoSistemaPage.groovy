@@ -12,7 +12,10 @@ class ResumoSistemaPage extends Page{
     }
 
     boolean hasErrorMessageLaboratorioNaoCadastrado(){
-        $('div#resumo-content label#errorMessage').text() == "O sistema ainda não possui laboratorios para exibir ou os laboratórios cadastrados não possuem resíduos cadastrados"
-        //mudar para internacionalizado
+        $('div#resumo-content label#errorMessage').text() == "O sistema ainda não possui labóratorios para exibir ou os laboratórios não possuem resíduos cadastrados"
+    }
+
+    boolean hasMessageLicitacaoNecessaria(){
+        $('textField#status-message').text() == "Uma licitaçao é necessaria para recolher os Residuos nos Laboratorios"
     }
 }
