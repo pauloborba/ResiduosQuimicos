@@ -9,11 +9,11 @@
     <label for="status-message">Status do Sistema:</label>
     <textField id ="status-message">${statusGeral}</textField>
     <g:if test="${laboratorios != []}">
-        <table>
+        <table id="table-residuos">
             <thead>
             <tr>
                 <th>Departamento</th>
-                <th>Residuo</th>
+                <th>Resíduo</th>
                 <th>Peso (Kg)</th>
             </tr>
             </thead>

@@ -7,6 +7,8 @@ import pages.IndexLaboratorioPage
 import pages.ResumoSistemaPage
 import pages.ShowLaboratorioPage
 import pages.ShowResiduoPage
+import residuosquimicos.Laboratorio
+import residuosquimicos.Residuo
 
 this.metaClass.mixin(cucumber.api.groovy.Hooks)
 this.metaClass.mixin(cucumber.api.groovy.EN)
@@ -48,4 +50,9 @@ And(~/^eu criei o Residuo "([^"]*)" com peso "([^"]*)" associado ao laboratório
 Then(~/^eu devo visualizar uma mensagem informando que é necessário fazer uma licitação$/) { ->
    at ResumoSistemaPage
     assert page.hasMessageLicitacaoNecessaria()
+}
+
+Then(~/^eu devo visualizar o resíduo "([^"]*)" com peso "([^"]*)" associado ao laboratório "([^"]*)"$/) { String nomeResiduo, String peso, String nomeLaboratorio ->
+    at ResumoSistemaPage
+    assert page.hasLinhaNaTabela(nomeResiduo, peso, nomeLaboratorio)
 }

@@ -527,6 +527,4 @@ public enum LaboratorioList {
 
     String toString() { value }
     String getKey() { name() }
-
-
 }

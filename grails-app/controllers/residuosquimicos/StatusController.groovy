@@ -4,10 +4,10 @@ class StatusController {
     def index() { }
 
     def resumoSistema(){
-        def statusGeral = "A UFPE não possui quantidade de residuos suficiente para licitação"
+        def statusGeral = "A UFPE não possui quantidade de resíduos suficiente para licitação"
 
         if(eNecessarioColeta()){
-            statusGeral = "Uma licitaçao é necessaria para recolher os Residuos nos Laboratorios"
+            statusGeral = "Uma licitaçao é necessaria para recolher os resíduos nos Laboratorios"
         }
         [statusGeral:statusGeral, laboratorios:Laboratorio.all.findAll {!it.residuos.isEmpty()}]
     }

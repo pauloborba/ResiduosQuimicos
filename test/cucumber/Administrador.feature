@@ -4,20 +4,22 @@ Feature: usuário administrador do sistema
   So that eu possa ter um controle do sistema e gerar licitações quando for necessário
 
   #GUI
-#  Scenario: gerar lista de laboratórios com resíduos a ser coletado (positivo)
-#    Given eu crei o Laboratório "Laboratório de Enfermagem" no Departamento "Departamento de Enfermagem" e centro "Centro de Ciências da Saúde"
-#    And eu criei o Laboratório "Laboratório de Biotecnologia" no Departamento "Laboratório de Biotecnologia" e centro "Centro de Biociências"
-#    And eu criei o Residuo "Descartáveis em Geral" com peso "3000" associado ao laboratório "Laboratório de Enfermagem"
-#    And eu criei o Residuo "Compostos químicos" com peso "3700" associado ao laboratório "Laboratório de Biotecnologia"
-#    When eu vou para a página de resumo do sistema
-#    Then eu devo visualizar os residuos "Descartáveis em Geral" com peso "3000" e "Compostos químicos" com peso "3700" na tabela de resumo do sistema
+  Scenario: gerar lista de laboratórios com resíduos a ser coletado (positivo)
+    Given eu crei o Laboratório "LABORATORIO_DE_ENFERMAGEM" no Departamento "DEPARTAMENTO_DE_ENFERMAGEM" e centro "CCS"
+    And eu criei o Laboratório "LABORATORIO_DE_BIOTECNOLOGIA_BIOQUIMICA" no Departamento "DEPARTAMENTO_DE_BIOQUIMICA" e centro "CB"
+    And eu criei o Residuo "Descartáveis em geral" com peso "4000,0" associado ao laboratório "LABORATORIO_DE_ENFERMAGEM"
+    And eu criei o Residuo "Compostos químicos" com peso "3700,0" associado ao laboratório "LABORATORIO_DE_BIOTECNOLOGIA_BIOQUIMICA"
+    When eu vou para a página de resumo do sistema
+    Then eu devo visualizar o resíduo "Descartáveis em geral" com peso "4000" associado ao laboratório "LABORATORIO_DE_ENFERMAGEM"
+    And eu devo visualizar o resíduo "Compostos químicos" com peso "3700" associado ao laboratório "LABORATORIO_DE_BIOTECNOLOGIA_BIOQUIMICA"
 
 
-  Scenario: gerar lista de laboratórios com resíduos a ser coletado (negativo)
+#OK
+ Scenario: gerar lista de laboratórios com resíduos a ser coletado (negativo)
     Given o sistema não possui nenhum laboratório cadastrado
     When eu vou para a página de resumo do sistema
     Then eu devo visualizar uma mensagem de erro informando que a UFPE não possui laboratórios
-
+#OK
   Scenario: verificar necessidade de coleta de resíduos na UFPE
     Given eu crei o Laboratório "LABORATORIO_DE_ENFERMAGEM" no Departamento "DEPARTAMENTO_DE_ENFERMAGEM" e centro "CCS"
     And eu criei o Laboratório "LABORATORIO_DE_BIOTECNOLOGIA_BIOQUIMICA" no Departamento "DEPARTAMENTO_DE_BIOQUIMICA" e centro "CB"
@@ -27,10 +29,10 @@ Feature: usuário administrador do sistema
     Then eu devo visualizar uma mensagem informando que é necessário fazer uma licitação
 
 #  Scenario: buscar maior pelo laboratório com maior geração de resíduos
-#    Given eu crei o Laboratório "Laboratório de Enfermagem" no Departamento "Departamento de Enfermagem" e centro "Centro de Ciências da Saúde"
-#    And eu criei o Laboratório "Laboratório de Biotecnologia" no Departamento "Laboratório de Biotecnologia" e centro "Centro de Biociências"
-#    And eu criei o Residuo "Descartáveis em Geral" com peso "3000" associado ao laboratório "Laboratório de Enfermagem"
-#    And eu criei o Residuo "Compostos químicos" com peso "3700" associado ao laboratório "Laboratório de Biotecnologia"
+#  Given eu crei o Laboratório "LABORATORIO_DE_ENFERMAGEM" no Departamento "DEPARTAMENTO_DE_ENFERMAGEM" e centro "CCS"
+#    And eu criei o Laboratório "LABORATORIO_DE_BIOTECNOLOGIA_BIOQUIMICA" no Departamento "DEPARTAMENTO_DE_BIOQUIMICA" e centro "CB"
+#    And eu criei o Residuo "Descartáveis em geral" com peso "4000,0" associado ao laboratório "LABORATORIO_DE_ENFERMAGEM"
+#    And eu criei o Residuo "Compostos químicos" com peso "3700,0" associado ao laboratório "LABORATORIO_DE_BIOTECNOLOGIA_BIOQUIMICA"
 #    When eu vou para a página de estatísticas
 #    Then eu devo visualizar que o Laboratório "Laboratório de Biotecnologia" é o maior gerador de resíduos
 
