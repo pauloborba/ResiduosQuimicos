@@ -3,6 +3,7 @@ package cucumber.steps
 import cucumber.api.PendingException
 import pages.CreateLaboratorioPage
 import pages.CreateResiduoPage
+import pages.EstatisticasPage
 import pages.IndexLaboratorioPage
 import pages.ResumoSistemaPage
 import pages.ShowLaboratorioPage
@@ -55,4 +56,13 @@ Then(~/^eu devo visualizar uma mensagem informando que é necessário fazer uma 
 Then(~/^eu devo visualizar o resíduo "([^"]*)" com peso "([^"]*)" associado ao laboratório "([^"]*)"$/) { String nomeResiduo, String peso, String nomeLaboratorio ->
     at ResumoSistemaPage
     assert page.hasLinhaNaTabela(nomeResiduo, peso, nomeLaboratorio)
+}
+
+When(~/^eu vou para a página de estatísticas$/) { ->
+    to EstatisticasPage
+    at EstatisticasPage
+}
+Then(~/^eu devo visualizar que o Laboratório "([^"]*)" é o maior gerador de resíduos$/) { String nomeLab ->
+    at EstatisticasPage
+    assert page.eOmaiorGerador(nomeLab)
 }

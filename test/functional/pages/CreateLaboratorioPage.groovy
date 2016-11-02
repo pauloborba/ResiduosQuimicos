@@ -16,8 +16,6 @@ class CreateLaboratorioPage extends Page {
         $('select#nomeCentro').value(nomeCentro)
         $('select#nomeDepartamento').value(nomeDep)
         $('select#nomeLaboratorio').value(nomeLab)
-        //nome do responsável é obrigatório mas não impacta no teste, setarei um nome qualquer
-        $('#create-laboratorio input#responsavel').value("João Carlos")
         $('#create-laboratorio input#create').click()
     }
 

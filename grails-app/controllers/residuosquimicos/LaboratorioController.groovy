@@ -101,5 +101,4 @@ class LaboratorioController {
             '*'{ render status: NOT_FOUND }
         }
     }
-
 }

@@ -50,11 +50,20 @@
 				</li>
 				</g:if>
 			
+				<g:if test="${laboratorioInstance?.solicitante}">
+				<li class="fieldcontain">
+					<span id="solicitante-label" class="property-label"><g:message code="laboratorio.solicitante.label" default="Solicitante" /></span>
+					
+						<span class="property-value" aria-labelledby="solicitante-label"><g:link controller="usuario" action="show" id="${laboratorioInstance?.solicitante?.id}">${laboratorioInstance?.solicitante?.encodeAsHTML()}</g:link></span>
+					
+				</li>
+				</g:if>
+			
 				<g:if test="${laboratorioInstance?.responsavel}">
 				<li class="fieldcontain">
 					<span id="responsavel-label" class="property-label"><g:message code="laboratorio.responsavel.label" default="Responsavel" /></span>
 					
-						<span class="property-value" aria-labelledby="responsavel-label"><g:fieldValue bean="${laboratorioInstance}" field="responsavel"/></span>
+						<span class="property-value" aria-labelledby="responsavel-label"><g:link controller="usuario" action="show" id="${laboratorioInstance?.responsavel?.id}">${laboratorioInstance?.responsavel?.encodeAsHTML()}</g:link></span>
 					
 				</li>
 				</g:if>
@@ -66,6 +75,15 @@
 						<g:each in="${laboratorioInstance.residuos}" var="r">
 						<span class="property-value" aria-labelledby="residuos-label"><g:link controller="residuo" action="show" id="${r.id}">${r?.encodeAsHTML()}</g:link></span>
 						</g:each>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${laboratorioInstance?.solicitado}">
+				<li class="fieldcontain">
+					<span id="solicitado-label" class="property-label"><g:message code="laboratorio.solicitado.label" default="Solicitado" /></span>
+					
+						<span class="property-value" aria-labelledby="solicitado-label"><g:formatBoolean boolean="${laboratorioInstance?.solicitado}" /></span>
 					
 				</li>
 				</g:if>

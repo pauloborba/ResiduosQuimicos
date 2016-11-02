@@ -30,7 +30,11 @@
 					
 						<g:sortableColumn property="nomeLaboratorio" title="${message(code: 'laboratorio.nomeLaboratorio.label', default: 'Nome Laboratorio')}" />
 					
-						<g:sortableColumn property="responsavel" title="${message(code: 'laboratorio.responsavel.label', default: 'Responsavel')}" />
+						<th><g:message code="laboratorio.solicitante.label" default="Solicitante" /></th>
+					
+						<th><g:message code="laboratorio.responsavel.label" default="Responsavel" /></th>
+					
+						<g:sortableColumn property="solicitado" title="${message(code: 'laboratorio.solicitado.label', default: 'Solicitado')}" />
 					
 					</tr>
 				</thead>
@@ -44,7 +48,11 @@
 					
 						<td>${fieldValue(bean: laboratorioInstance, field: "nomeLaboratorio")}</td>
 					
+						<td>${fieldValue(bean: laboratorioInstance, field: "solicitante")}</td>
+					
 						<td>${fieldValue(bean: laboratorioInstance, field: "responsavel")}</td>
+					
+						<td><g:formatBoolean boolean="${laboratorioInstance.solicitado}" /></td>
 					
 					</tr>
 				</g:each>

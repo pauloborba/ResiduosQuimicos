@@ -13,9 +13,8 @@ Feature: usuário administrador do sistema
     Then eu devo visualizar o resíduo "Descartáveis em geral" com peso "4000" associado ao laboratório "LABORATORIO_DE_ENFERMAGEM"
     And eu devo visualizar o resíduo "Compostos químicos" com peso "3700" associado ao laboratório "LABORATORIO_DE_BIOTECNOLOGIA_BIOQUIMICA"
 
-
 #OK
- Scenario: gerar lista de laboratórios com resíduos a ser coletado (negativo)
+   Scenario: gerar lista de laboratórios com resíduos a ser coletado (negativo)
     Given o sistema não possui nenhum laboratório cadastrado
     When eu vou para a página de resumo do sistema
     Then eu devo visualizar uma mensagem de erro informando que a UFPE não possui laboratórios
@@ -28,13 +27,13 @@ Feature: usuário administrador do sistema
     When eu vou para a página de resumo do sistema
     Then eu devo visualizar uma mensagem informando que é necessário fazer uma licitação
 
-#  Scenario: buscar maior pelo laboratório com maior geração de resíduos
-#  Given eu crei o Laboratório "LABORATORIO_DE_ENFERMAGEM" no Departamento "DEPARTAMENTO_DE_ENFERMAGEM" e centro "CCS"
-#    And eu criei o Laboratório "LABORATORIO_DE_BIOTECNOLOGIA_BIOQUIMICA" no Departamento "DEPARTAMENTO_DE_BIOQUIMICA" e centro "CB"
-#    And eu criei o Residuo "Descartáveis em geral" com peso "4000,0" associado ao laboratório "LABORATORIO_DE_ENFERMAGEM"
-#    And eu criei o Residuo "Compostos químicos" com peso "3700,0" associado ao laboratório "LABORATORIO_DE_BIOTECNOLOGIA_BIOQUIMICA"
-#    When eu vou para a página de estatísticas
-#    Then eu devo visualizar que o Laboratório "Laboratório de Biotecnologia" é o maior gerador de resíduos
+  Scenario: buscar pelo laboratório com maior geração de resíduos
+    Given eu crei o Laboratório "LABORATORIO_DE_ENFERMAGEM" no Departamento "DEPARTAMENTO_DE_ENFERMAGEM" e centro "CCS"
+    And eu criei o Laboratório "LABORATORIO_DE_BIOTECNOLOGIA_BIOQUIMICA" no Departamento "DEPARTAMENTO_DE_BIOQUIMICA" e centro "CB"
+    And eu criei o Residuo "Descartáveis em geral" com peso "4000,0" associado ao laboratório "LABORATORIO_DE_ENFERMAGEM"
+    And eu criei o Residuo "Compostos químicos" com peso "3700,0" associado ao laboratório "LABORATORIO_DE_BIOTECNOLOGIA_BIOQUIMICA"
+    When eu vou para a página de estatísticas
+    Then eu devo visualizar que o Laboratório "LABORATORIO_DE_ENFERMAGEM" é o maior gerador de resíduos
 
 #CONTROLLER
 #  Scenario: buscar percentual de Laboratorios com resíduos cadastrados

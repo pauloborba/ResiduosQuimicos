@@ -7,7 +7,7 @@
 		<g:message code="laboratorio.nomeCentro.label" default="Nome Centro" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:select name="nomeCentro" from="${src.groovy.CentroList?.values()}" keys="${src.groovy.CentroList.values()*.name()}" required="" value="${laboratorioInstance?.nomeCentro?.name()}"  optionKey="key" />
+	<g:select name="nomeCentro" from="${src.groovy.CentroList?.values()}" keys="${src.groovy.CentroList.values()*.name()}" required="" value="${laboratorioInstance?.nomeCentro?.name()}" />
 
 </div>
 
@@ -16,7 +16,7 @@
 		<g:message code="laboratorio.nomeDepartamento.label" default="Nome Departamento" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:select name="nomeDepartamento" from="${src.groovy.DepartamentoList?.values()}" keys="${src.groovy.DepartamentoList.values()*.name()}" required="" value="${laboratorioInstance?.nomeDepartamento?.name()}" optionKey="key" />
+	<g:select name="nomeDepartamento" from="${src.groovy.DepartamentoList?.values()}" keys="${src.groovy.DepartamentoList.values()*.name()}" required="" value="${laboratorioInstance?.nomeDepartamento?.name()}" />
 
 </div>
 
@@ -25,16 +25,25 @@
 		<g:message code="laboratorio.nomeLaboratorio.label" default="Nome Laboratorio" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:select name="nomeLaboratorio" from="${src.groovy.LaboratorioList?.values()}" keys="${src.groovy.LaboratorioList.values()*.name()}" required="" value="${laboratorioInstance?.nomeLaboratorio?.name()}" optionKey="key" />
+	<g:select name="nomeLaboratorio" from="${src.groovy.LaboratorioList?.values()}" keys="${src.groovy.LaboratorioList.values()*.name()}" required="" value="${laboratorioInstance?.nomeLaboratorio?.name()}" />
 
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: laboratorioInstance, field: 'responsavel', 'error')} required">
+<div class="fieldcontain ${hasErrors(bean: laboratorioInstance, field: 'solicitante', 'error')} ">
+	<label for="solicitante">
+		<g:message code="laboratorio.solicitante.label" default="Solicitante" />
+		
+	</label>
+	<g:select id="solicitante" name="solicitante.id" from="${residuosquimicos.Usuario.list()}" optionKey="id" value="${laboratorioInstance?.solicitante?.id}" class="many-to-one" noSelection="['null': '']"/>
+
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: laboratorioInstance, field: 'responsavel', 'error')} ">
 	<label for="responsavel">
 		<g:message code="laboratorio.responsavel.label" default="Responsavel" />
-		<span class="required-indicator">*</span>
+		
 	</label>
-	<g:textField name="responsavel" required="" value="${laboratorioInstance?.responsavel}"/>
+	<g:select id="responsavel" name="responsavel.id" from="${residuosquimicos.Usuario.list()}" optionKey="id" value="${laboratorioInstance?.responsavel?.id}" class="many-to-one" noSelection="['null': '']"/>
 
 </div>
 
@@ -53,6 +62,15 @@
 </li>
 </ul>
 
+
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: laboratorioInstance, field: 'solicitado', 'error')} ">
+	<label for="solicitado">
+		<g:message code="laboratorio.solicitado.label" default="Solicitado" />
+		
+	</label>
+	<g:checkBox name="solicitado" value="${laboratorioInstance?.solicitado}" />
 
 </div>
 

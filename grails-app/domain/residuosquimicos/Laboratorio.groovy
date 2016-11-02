@@ -7,13 +7,16 @@ class Laboratorio {
     CentroList nomeCentro
     DepartamentoList nomeDepartamento
     LaboratorioList nomeLaboratorio
-    String responsavel
+    Usuario solicitante
+    Usuario responsavel
+    boolean solicitado
     static hasMany = [residuos:Residuo]
 
     static constraints = {
         nomeCentro blank: false, nullable: false
         nomeDepartamento blank: false, nullable: false
         nomeLaboratorio blank: false, nullable: false
-        responsavel blank: false, nullable: false
+        solicitante nullable:true
+        responsavel nullable:true
     }
 }
