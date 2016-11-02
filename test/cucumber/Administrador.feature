@@ -36,9 +36,9 @@ Feature: usuário administrador do sistema
     Then eu devo visualizar que o Laboratório "LABORATORIO_DE_ENFERMAGEM" é o maior gerador de resíduos
 
 #CONTROLLER
-#  Scenario: buscar percentual de Laboratorios com resíduos cadastrados
-#    Given o sistema possui o laboratorio "Laboratório de Enfermagem" cadastrado
-#    And o sistema possui o laboratorio "Laboratório de Biotecnologia" cadastrado
-#    And apenas o laboratório "Laboratorio de Enfermagem" possui Residuos cadastrados
-#    When eu tento verificar o percentual de laboratorios com Residuos
-#    Then o percentual retornado pelo sistema será "50" por cento
+  Scenario: buscar percentual de Laboratorios com resíduos cadastrados
+    Given o sistema possui o laboratorio "LABORATORIO_DE_ENFERMAGEM" com Departamento "DEPARTAMENTO_DE_ENFERMAGEM" e Centro "CCS" cadastrado
+    And o sistema possui o laboratorio "LABORATORIO_DE_BIOTECNOLOGIA_BIOQUIMICA" com Departamento "DEPARTAMENTO_DE_BIOQUIMICA" e Centro "CB" cadastrado
+    And o sistema possui o Residuo "Compostos químicos" com peso "300,0" associado ao laboratório "DEPARTAMENTO_DE_ENFERMAGEM"
+    When eu tento verificar o percentual de laboratorios com Residuos cadastrado
+    Then o percentual retornado pelo sistema será "50" por cento
