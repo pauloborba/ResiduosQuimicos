@@ -19,4 +19,8 @@ class Laboratorio {
         solicitante nullable:true
         responsavel nullable:true
     }
+
+    Laboratorio() {
+        residuos = []
+    }
 }

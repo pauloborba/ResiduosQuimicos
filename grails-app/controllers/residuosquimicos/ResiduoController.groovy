@@ -8,8 +8,6 @@ import grails.transaction.Transactional
 @Transactional(readOnly = true)
 class ResiduoController {
 
-    static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
-
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
         respond Residuo.list(params), model:[residuoInstanceCount: Residuo.count()]
@@ -36,6 +34,10 @@ class ResiduoController {
         }
 
         residuoInstance.save flush:true
+        //forçando o biding
+        def lab = residuoInstance.laboratorio
+        lab.residuos.add(residuoInstance)
+        lab.save(flush: true)
 
         request.withFormat {
             form multipartForm {
