@@ -11,12 +11,12 @@
 
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: residuoInstance, field: 'composicao', 'error')} required">
-	<label for="composicao">
-		<g:message code="residuo.composicao.label" default="Composicao" />
+<div class="fieldcontain ${hasErrors(bean: residuoInstance, field: 'descricao', 'error')} required">
+	<label for="descricao">
+		<g:message code="residuo.descricao.label" default="Descricao" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:textField name="composicao" required="" value="${residuoInstance?.composicao}"/>
+	<g:textField name="descricao" required="" value="${residuoInstance?.descricao}"/>
 
 </div>
 
@@ -44,15 +44,6 @@
 		<span class="required-indicator">*</span>
 	</label>
 	<g:select id="laboratorio" name="laboratorio.id" from="${residuosquimicos.Laboratorio.list()}" optionKey="id" required="" value="${residuoInstance?.laboratorio?.id}" class="many-to-one"/>
-
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: residuoInstance, field: 'pessoaGerador', 'error')} required">
-	<label for="pessoaGerador">
-		<g:message code="residuo.pessoaGerador.label" default="Pessoa Gerador" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:textField name="pessoaGerador" required="" value="${residuoInstance?.pessoaGerador}"/>
 
 </div>
 

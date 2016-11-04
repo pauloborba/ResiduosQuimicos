@@ -1,4 +1,4 @@
-package src.groovy
+package residuosquimicos
 
 public enum CentroList {
     CB("Centro de Biociências"),

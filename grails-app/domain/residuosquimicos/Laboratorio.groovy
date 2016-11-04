@@ -1,7 +1,5 @@
 package residuosquimicos
-import src.groovy.CentroList
-import src.groovy.DepartamentoList
-import src.groovy.LaboratorioList
+
 
 class Laboratorio {
     CentroList nomeCentro
@@ -9,7 +7,6 @@ class Laboratorio {
     LaboratorioList nomeLaboratorio
     Usuario solicitante
     Usuario responsavel
-    boolean solicitado
     static hasMany = [residuos:Residuo]
 
     static constraints = {

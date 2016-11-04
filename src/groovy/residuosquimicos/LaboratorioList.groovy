@@ -1,4 +1,4 @@
-package src.groovy
+package residuosquimicos
 
 public enum LaboratorioList {
     //CB - Departamento de Antibióticos

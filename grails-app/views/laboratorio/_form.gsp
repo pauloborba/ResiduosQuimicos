@@ -7,7 +7,7 @@
 		<g:message code="laboratorio.nomeCentro.label" default="Nome Centro" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:select name="nomeCentro" from="${src.groovy.CentroList?.values()}" keys="${src.groovy.CentroList.values()*.name()}" required="" value="${laboratorioInstance?.nomeCentro?.name()}" />
+	<g:select name="nomeCentro" from="${residuosquimicos.CentroList?.values()}" keys="${residuosquimicos.CentroList.values()*.name()}" required="" value="${laboratorioInstance?.nomeCentro?.name()}" />
 
 </div>
 
@@ -16,7 +16,7 @@
 		<g:message code="laboratorio.nomeDepartamento.label" default="Nome Departamento" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:select name="nomeDepartamento" from="${src.groovy.DepartamentoList?.values()}" keys="${src.groovy.DepartamentoList.values()*.name()}" required="" value="${laboratorioInstance?.nomeDepartamento?.name()}" />
+	<g:select name="nomeDepartamento" from="${residuosquimicos.DepartamentoList?.values()}" keys="${residuosquimicos.DepartamentoList.values()*.name()}" required="" value="${laboratorioInstance?.nomeDepartamento?.name()}" />
 
 </div>
 
@@ -25,7 +25,7 @@
 		<g:message code="laboratorio.nomeLaboratorio.label" default="Nome Laboratorio" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:select name="nomeLaboratorio" from="${src.groovy.LaboratorioList?.values()}" keys="${src.groovy.LaboratorioList.values()*.name()}" required="" value="${laboratorioInstance?.nomeLaboratorio?.name()}" />
+	<g:select name="nomeLaboratorio" from="${residuosquimicos.LaboratorioList?.values()}" keys="${residuosquimicos.LaboratorioList.values()*.name()}" required="" value="${laboratorioInstance?.nomeLaboratorio?.name()}" />
 
 </div>
 
@@ -62,15 +62,6 @@
 </li>
 </ul>
 
-
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: laboratorioInstance, field: 'solicitado', 'error')} ">
-	<label for="solicitado">
-		<g:message code="laboratorio.solicitado.label" default="Solicitado" />
-		
-	</label>
-	<g:checkBox name="solicitado" value="${laboratorioInstance?.solicitado}" />
 
 </div>
 

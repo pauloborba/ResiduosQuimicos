@@ -34,8 +34,6 @@
 					
 						<th><g:message code="laboratorio.responsavel.label" default="Responsavel" /></th>
 					
-						<g:sortableColumn property="solicitado" title="${message(code: 'laboratorio.solicitado.label', default: 'Solicitado')}" />
-					
 					</tr>
 				</thead>
 				<tbody>
@@ -51,8 +49,6 @@
 						<td>${fieldValue(bean: laboratorioInstance, field: "solicitante")}</td>
 					
 						<td>${fieldValue(bean: laboratorioInstance, field: "responsavel")}</td>
-					
-						<td><g:formatBoolean boolean="${laboratorioInstance.solicitado}" /></td>
 					
 					</tr>
 				</g:each>

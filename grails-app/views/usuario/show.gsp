@@ -41,15 +41,6 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${usuarioInstance?.tipo}">
-				<li class="fieldcontain">
-					<span id="tipo-label" class="property-label"><g:message code="usuario.tipo.label" default="Tipo" /></span>
-					
-						<span class="property-value" aria-labelledby="tipo-label"><g:fieldValue bean="${usuarioInstance}" field="tipo"/></span>
-					
-				</li>
-				</g:if>
-			
 				<g:if test="${usuarioInstance?.associado}">
 				<li class="fieldcontain">
 					<span id="associado-label" class="property-label"><g:message code="usuario.associado.label" default="Associado" /></span>
@@ -73,6 +64,15 @@
 					<span id="ramal-label" class="property-label"><g:message code="usuario.ramal.label" default="Ramal" /></span>
 					
 						<span class="property-value" aria-labelledby="ramal-label"><g:fieldValue bean="${usuarioInstance}" field="ramal"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${usuarioInstance?.tipo}">
+				<li class="fieldcontain">
+					<span id="tipo-label" class="property-label"><g:message code="usuario.tipo.label" default="Tipo" /></span>
+					
+						<span class="property-value" aria-labelledby="tipo-label"><g:fieldValue bean="${usuarioInstance}" field="tipo"/></span>
 					
 				</li>
 				</g:if>

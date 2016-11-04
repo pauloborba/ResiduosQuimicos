@@ -16,13 +16,9 @@ class CreateResiduoPage extends Page{
     def createResiduo(String nomeResiduo, String pesoResiduo, String nomeLaboratorio){
         $('input#nome').value(nomeResiduo)
         //composição não é relevante para o teste
-        $('input#composicao').value("Padrão")
+        $('input#descricao').value("Padrão")
         $('input#peso').value(pesoResiduo)
-        println nomeLaboratorio
-        println Laboratorio.findByNomeLaboratorio(nomeLaboratorio).id
         $('select#laboratorio').value(Laboratorio.findByNomeLaboratorio(nomeLaboratorio).id)
-        //pessoa geradora não é relevante para o teste
-        $('#create-residuo input#pessoaGerador').value("None")
         $('#create-residuo input#create').click()
     }
 }

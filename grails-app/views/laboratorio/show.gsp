@@ -79,15 +79,6 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${laboratorioInstance?.solicitado}">
-				<li class="fieldcontain">
-					<span id="solicitado-label" class="property-label"><g:message code="laboratorio.solicitado.label" default="Solicitado" /></span>
-					
-						<span class="property-value" aria-labelledby="solicitado-label"><g:formatBoolean boolean="${laboratorioInstance?.solicitado}" /></span>
-					
-				</li>
-				</g:if>
-			
 			</ol>
 			<g:form url="[resource:laboratorioInstance, action:'delete']" method="DELETE">
 				<fieldset class="buttons">

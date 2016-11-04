@@ -26,15 +26,13 @@
 					
 						<g:sortableColumn property="nome" title="${message(code: 'residuo.nome.label', default: 'Nome')}" />
 					
-						<g:sortableColumn property="composicao" title="${message(code: 'residuo.composicao.label', default: 'Composicao')}" />
+						<g:sortableColumn property="descricao" title="${message(code: 'residuo.descricao.label', default: 'Descricao')}" />
 					
 						<g:sortableColumn property="peso" title="${message(code: 'residuo.peso.label', default: 'Peso')}" />
 					
 						<g:sortableColumn property="dataCadastro" title="${message(code: 'residuo.dataCadastro.label', default: 'Data Cadastro')}" />
 					
 						<th><g:message code="residuo.laboratorio.label" default="Laboratorio" /></th>
-					
-						<g:sortableColumn property="pessoaGerador" title="${message(code: 'residuo.pessoaGerador.label', default: 'Pessoa Gerador')}" />
 					
 					</tr>
 				</thead>
@@ -44,15 +42,13 @@
 					
 						<td><g:link action="show" id="${residuoInstance.id}">${fieldValue(bean: residuoInstance, field: "nome")}</g:link></td>
 					
-						<td>${fieldValue(bean: residuoInstance, field: "composicao")}</td>
+						<td>${fieldValue(bean: residuoInstance, field: "descricao")}</td>
 					
 						<td>${fieldValue(bean: residuoInstance, field: "peso")}</td>
 					
 						<td><g:formatDate date="${residuoInstance.dataCadastro}" /></td>
 					
 						<td>${fieldValue(bean: residuoInstance, field: "laboratorio")}</td>
-					
-						<td>${fieldValue(bean: residuoInstance, field: "pessoaGerador")}</td>
 					
 					</tr>
 				</g:each>

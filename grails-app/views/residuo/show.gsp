@@ -32,11 +32,11 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${residuoInstance?.composicao}">
+				<g:if test="${residuoInstance?.descricao}">
 				<li class="fieldcontain">
-					<span id="composicao-label" class="property-label"><g:message code="residuo.composicao.label" default="Composicao" /></span>
+					<span id="descricao-label" class="property-label"><g:message code="residuo.descricao.label" default="Descricao" /></span>
 					
-						<span class="property-value" aria-labelledby="composicao-label"><g:fieldValue bean="${residuoInstance}" field="composicao"/></span>
+						<span class="property-value" aria-labelledby="descricao-label"><g:fieldValue bean="${residuoInstance}" field="descricao"/></span>
 					
 				</li>
 				</g:if>
@@ -64,15 +64,6 @@
 					<span id="laboratorio-label" class="property-label"><g:message code="residuo.laboratorio.label" default="Laboratorio" /></span>
 					
 						<span class="property-value" aria-labelledby="laboratorio-label"><g:link controller="laboratorio" action="show" id="${residuoInstance?.laboratorio?.id}">${residuoInstance?.laboratorio?.encodeAsHTML()}</g:link></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${residuoInstance?.pessoaGerador}">
-				<li class="fieldcontain">
-					<span id="pessoaGerador-label" class="property-label"><g:message code="residuo.pessoaGerador.label" default="Pessoa Gerador" /></span>
-					
-						<span class="property-value" aria-labelledby="pessoaGerador-label"><g:fieldValue bean="${residuoInstance}" field="pessoaGerador"/></span>
 					
 				</li>
 				</g:if>

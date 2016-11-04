@@ -20,15 +20,6 @@
 
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: usuarioInstance, field: 'tipo', 'error')} required">
-	<label for="tipo">
-		<g:message code="usuario.tipo.label" default="Tipo" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:field name="tipo" type="number" value="${usuarioInstance.tipo}" required=""/>
-
-</div>
-
 <div class="fieldcontain ${hasErrors(bean: usuarioInstance, field: 'associado', 'error')} ">
 	<label for="associado">
 		<g:message code="usuario.associado.label" default="Associado" />
@@ -53,6 +44,15 @@
 		<span class="required-indicator">*</span>
 	</label>
 	<g:textField name="ramal" required="" value="${usuarioInstance?.ramal}"/>
+
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: usuarioInstance, field: 'tipo', 'error')} required">
+	<label for="tipo">
+		<g:message code="usuario.tipo.label" default="Tipo" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:select name="tipo" from="${residuosquimicos.UsuarioList?.values()}" keys="${residuosquimicos.UsuarioList.values()*.name()}" required="" value="${usuarioInstance?.tipo?.name()}" />
 
 </div>
 

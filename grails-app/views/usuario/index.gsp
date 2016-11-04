@@ -28,13 +28,13 @@
 					
 						<g:sortableColumn property="senha" title="${message(code: 'usuario.senha.label', default: 'Senha')}" />
 					
-						<g:sortableColumn property="tipo" title="${message(code: 'usuario.tipo.label', default: 'Tipo')}" />
-					
 						<g:sortableColumn property="associado" title="${message(code: 'usuario.associado.label', default: 'Associado')}" />
 					
 						<g:sortableColumn property="email" title="${message(code: 'usuario.email.label', default: 'Email')}" />
 					
 						<g:sortableColumn property="ramal" title="${message(code: 'usuario.ramal.label', default: 'Ramal')}" />
+					
+						<g:sortableColumn property="tipo" title="${message(code: 'usuario.tipo.label', default: 'Tipo')}" />
 					
 					</tr>
 				</thead>
@@ -46,13 +46,13 @@
 					
 						<td>${fieldValue(bean: usuarioInstance, field: "senha")}</td>
 					
-						<td>${fieldValue(bean: usuarioInstance, field: "tipo")}</td>
-					
 						<td><g:formatBoolean boolean="${usuarioInstance.associado}" /></td>
 					
 						<td>${fieldValue(bean: usuarioInstance, field: "email")}</td>
 					
 						<td>${fieldValue(bean: usuarioInstance, field: "ramal")}</td>
+					
+						<td>${fieldValue(bean: usuarioInstance, field: "tipo")}</td>
 					
 					</tr>
 				</g:each>
