@@ -1,6 +1,6 @@
 package residuosquimicos
 
-public enum LaboratorioList {
+public enum NomesDeLaboratorios {
     //CB - Departamento de Antibióticos
     LABORATORIO_DE_FARMACOLOGIA_E_CANCEROLOGIA_EXPERIMENTAIS("Lab. de Farmacologia e Cancerologia Experimentais (Toxologia e Cancerologia Experimental)"),
     LABORATORIO_DE_CULTURA_DE_CELULAS_DEPARTAMENTO_DE_ANTIBIOTICOS("Lab. de Cultura de Células"),
@@ -245,7 +245,7 @@ public enum LaboratorioList {
     LABORATORIO_DE_PESQUISAS_DE_OPORTUNISTAS("Laboratório de Pesquisas de oportunistas"),
     SALA_DE_METODOS("Sala de Métodos"),
 
-   // Departamento de Nutrição
+    // Departamento de Nutrição
     LNC("Laboratório de Nutrição Clínica (LNC)"),
     LEAAL("Laboratório de Experimentação  e Análise de Alimentos (LEAAL)"),
     LEAAL_FISICO_QUIMICA("LEAAL - Laboratório de Físico-Química"),
@@ -462,7 +462,7 @@ public enum LaboratorioList {
     RESSONANCIA_MAGNETICA_NUCLEAR("Ressonância Magnética Nuclear 1/2"),
 
     //Departamento de Química Fundamental
-    CENTRAL_ANALITICA("Central Analítica"),
+            CENTRAL_ANALITICA("Central Analítica"),
     IAAQ("Inst. Aut. p/ Anal. Quím. (IAAQ)"),
     COMPOSTOS_HIBRIDOS_INTERFACES("Compostos Híbridos Interfaces"),
     INSTRUMENTOS_P_ENSINO("Instrumento p/ Ensino"),
@@ -521,7 +521,7 @@ public enum LaboratorioList {
 
     public String value
 
-    LaboratorioList(String value){
+    NomesDeLaboratorios(String value){
         this.value = value
     }
 

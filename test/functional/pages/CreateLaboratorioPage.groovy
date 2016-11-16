@@ -7,7 +7,7 @@ class CreateLaboratorioPage extends Page {
     static url = "/ResiduosQuimicos/laboratorio/create"
     static at = {
         InternationalizationHelper helper = InternationalizationHelper.instance
-        String labelLab = "Laboratorio" //code.label
+        String labelLab = "Laboratorio"
         String createLabTitleList = helper.getMessage("default.create.label", labelLab)
         title ==~ createLabTitleList
     }

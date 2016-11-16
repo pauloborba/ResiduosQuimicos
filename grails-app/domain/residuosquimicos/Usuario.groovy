@@ -3,10 +3,10 @@ package residuosquimicos
 class Usuario {
     String nome
     String senha
-    UsuarioList tipo
+    TiposDeUsuario tipo
     boolean associado
-    String ramal //ramal para contato com o usuario
-    String email //email de acesso ao sistema
+    String ramal
+    String email
 
     static constraints = {
         nome nullable: false, blank: false

@@ -1,6 +1,6 @@
 package residuosquimicos
 
-public enum CentroList {
+public enum NomesDeCentros {
     CB("Centro de Biociências"),
     CCS("Centro de Ciências da Saúde"),
     CTG("Centro de Tecnologia e Geociências"),
@@ -9,7 +9,7 @@ public enum CentroList {
     CE("Centro de Educação")
     public String value
 
-    CentroList(String value){
+    NomesDeCentros(String value){
         this.value = value
     }
 

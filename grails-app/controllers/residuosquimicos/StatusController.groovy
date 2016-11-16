@@ -34,7 +34,6 @@ class StatusController {
             }
 
             def percentual = laboratoriosComResiduos / totalLaboratorios
-            println percentual*100
             return (percentual * 100)
         }
         return 0

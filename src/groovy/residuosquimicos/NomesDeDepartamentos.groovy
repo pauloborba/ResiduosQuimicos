@@ -1,6 +1,6 @@
 package residuosquimicos
 
-public enum DepartamentoList {
+public enum NomesDeDepartamentos {
     //Departamentos CB
     DEPARTAMENTO_DE_ANTIBIOTICOS("Departamento de Antibióticos"),
     DEPARTAMENTO_DE_ANATOMIA("Departamento de Anatomia Humana"),
@@ -30,7 +30,7 @@ public enum DepartamentoList {
     DEPARTAMENTO_DE_PROTESES_E_CIRURGIA_BUCOFACIAL("Departamento de Prótese e Cirurgia Bucofacial"),
 
     //Departamentos CTG
-    DEPARTAMENTO_DE_ENGENHARIA_CARTOGRAFICA("Departamento de Engenharia Cartográfica"),
+            DEPARTAMENTO_DE_ENGENHARIA_CARTOGRAFICA("Departamento de Engenharia Cartográfica"),
     DEPARTAMENTO_DE_ENGENHARIA_CIVIL("Departamento de Engenharia Civil"),
     DEPARTAMENTO_DE_ENGENHARIA_MECANICA("Departamento de Engenharia Mecânica"),
     DEPARTAMENTO_DE_ENGENHARIA_QUIMICA("Departamento de Engenharia Química"),
@@ -54,7 +54,7 @@ public enum DepartamentoList {
 
     public String value
 
-    DepartamentoList(String value){
+    NomesDeDepartamentos(String value){
         this.value = value
     }
 

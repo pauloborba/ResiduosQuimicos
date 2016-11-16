@@ -2,9 +2,9 @@ package residuosquimicos
 
 
 class Laboratorio {
-    CentroList nomeCentro
-    DepartamentoList nomeDepartamento
-    LaboratorioList nomeLaboratorio
+    NomesDeCentros nomeCentro
+    NomesDeDepartamentos nomeDepartamento
+    NomesDeLaboratorios nomeLaboratorio
     Usuario solicitante
     Usuario responsavel
     static hasMany = [residuos:Residuo]

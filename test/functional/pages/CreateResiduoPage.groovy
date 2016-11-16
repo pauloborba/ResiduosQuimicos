@@ -8,7 +8,7 @@ class CreateResiduoPage extends Page{
     static url = "/ResiduosQuimicos/residuo/create/"
     static at = {
         InternationalizationHelper helper = InternationalizationHelper.instance
-        String residuoLab = "Residuo" //code.label
+        String residuoLab = "Residuo"
         String createResiduoTitleList = helper.getMessage("default.create.label", residuoLab)
         title ==~ createResiduoTitleList
     }

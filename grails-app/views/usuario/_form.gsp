@@ -52,7 +52,7 @@
 		<g:message code="usuario.tipo.label" default="Tipo" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:select name="tipo" from="${residuosquimicos.UsuarioList?.values()}" keys="${residuosquimicos.UsuarioList.values()*.name()}" required="" value="${usuarioInstance?.tipo?.name()}" />
+	<g:select name="tipo" from="${residuosquimicos.TiposDeUsuario?.values()}" keys="${residuosquimicos.TiposDeUsuario.values()*.name()}" required="" value="${usuarioInstance?.tipo?.name()}" />
 
 </div>
 

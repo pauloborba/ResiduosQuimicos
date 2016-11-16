@@ -1,11 +1,11 @@
 package residuosquimicos
 
-public enum UsuarioList {
+public enum TiposDeUsuario {
     FAC("Facilitador"),
     ADMIN("Administrador")
     public String value
 
-    UsuarioList(String value){
+    TiposDeUsuario(String value){
         this.value = value
     }
 
