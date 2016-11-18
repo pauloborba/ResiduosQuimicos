@@ -36,8 +36,8 @@ Feature: Administrador do sistema
 
 #CONTROLLER
   Scenario: buscar percentual de laboratórios com resíduos cadastrados
-    Given o sistema possui o laboratório "LABORATORIO_DE_ENFERMAGEM" com departamento "DEPARTAMENTO_DE_ENFERMAGEM" e centro "CCS" cadastrado
-    And o sistema possui o laboratório "LABORATORIO_DE_BIOTECNOLOGIA_BIOQUIMICA" com departamento "DEPARTAMENTO_DE_BIOQUIMICA" e centro "CB" cadastrado
+    Given o sistema possui o laboratório "LABORATORIO_DE_ENFERMAGEM" com departamento "DEPARTAMENTO_DE_ENFERMAGEM" e centro "CCS" sem resíduos associados cadastrado
+    And o sistema possui o laboratório "LABORATORIO_DE_BIOTECNOLOGIA_BIOQUIMICA" com departamento "DEPARTAMENTO_DE_BIOQUIMICA" e centro "CB" sem resíduos associados cadastrado
     And o sistema possui o resíduo "Compostos químicos" com peso "300,0" associado ao laboratório "LABORATORIO_DE_ENFERMAGEM"
     When eu tento verificar o percentual de laboratorios com resíduos cadastrado
     Then o percentual retornado pelo sistema será "50" por cento

@@ -38,10 +38,9 @@ class StatusController {
         if(!Laboratorio.all.empty){
             Laboratorio maiorGerador = Laboratorio.all.get(0)
             Laboratorio.all.each { laboratorio ->
-                double pesoCurrentLab= 0, pesoCandidato = 0;
+                def pesoCurrentLab = maiorGerador.pesoResiduosAgregadosAoLaboratorio()
+                def pesoCandidato = laboratorio.pesoResiduosAgregadosAoLaboratorio()
 
-                maiorGerador.residuos.each {pesoCurrentLab+= it.peso}
-                laboratorio.residuos.each {pesoCandidato+=it.peso}
                 if(pesoCandidato>pesoCurrentLab){
                     maiorGerador = laboratorio
                 }

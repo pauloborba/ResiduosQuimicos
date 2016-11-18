@@ -20,4 +20,10 @@ class Laboratorio {
     Laboratorio() {
         residuos = []
     }
+
+    def pesoResiduosAgregadosAoLaboratorio(){
+        double pesoAgregado = 0
+        residuos.each {pesoAgregado+=it.peso}
+        pesoAgregado
+    }
 }

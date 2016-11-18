@@ -65,7 +65,7 @@ Then(~/^eu devo visualizar que o laboratório "([^"]*)" é o maior gerador de re
 
 
 //Controller Scenario Steps
-Given(~/^o sistema possui o laboratório "([^"]*)" com departamento "([^"]*)" e centro "([^"]*)" cadastrado$/) { String nomeLab, String nomeDep, String nomeCentro ->
+Given(~/^o sistema possui o laboratório "([^"]*)" com departamento "([^"]*)" e centro "([^"]*)" sem resíduos associados cadastrado$/) { String nomeLab, String nomeDep, String nomeCentro ->
     criarLaboratorio(nomeLab, nomeDep, nomeCentro)
     assert Laboratorio.findByNomeLaboratorio(nomeLab) != null
 }
