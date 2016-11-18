@@ -26,8 +26,7 @@ When(~/^eu vou para a página de resumo do sistema$/) { ->
     to ResumoSistemaPage
     at ResumoSistemaPage
 }
-Then(~/^eu devo visualizar uma mensagem de erro informando que a UFPE não possui laboratórios$/) { ->
-   at ResumoSistemaPage
+Then(~/^eu devo visualizar uma mensagem de erro informando que o sistema não possui laboratórios$/) { ->
    assert page.hasErrorMessageLaboratorioNaoCadastrado()
 }
 

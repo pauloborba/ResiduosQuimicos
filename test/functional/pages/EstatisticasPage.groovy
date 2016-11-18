@@ -20,5 +20,10 @@ class EstatisticasPage extends Page{
         $('textField#maiorGerador-message').text() ==~ messageMaiorGerador
     }
 
+    boolean hasErrorMessageLaboratorioNaoCadastrado(){
+        InternationalizationHelper helper = InternationalizationHelper.instance
+        String messageNaoPossuiLab= helper.getMessage("message.title.resumoSistema.naoPossuiLab")
+        $('div#estatistica-content textField#maiorGerador-message').text() ==~ messageNaoPossuiLab
+    }
 
 }

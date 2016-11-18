@@ -17,7 +17,7 @@
             <textField id ="maiorGerador-message"><g:message code="message.title.estatisticas.maiorGerador" args="[maiorGeradorDeResiduos.nomeLaboratorio, maiorGeradorDeResiduos.nomeDepartamento, maiorGeradorDeResiduos.nomeCentro]" /></textField>
         </g:if>
         <g:else>
-            <textField id ="maiorGerador-message">O sistema ainda não possui Laboratórios cadastrados</textField>
+            <textField id ="maiorGerador-message"><g:message code="message.title.resumoSistema.naoPossuiLab" /></textField>
         </g:else>
     </div>
     <g:if test="${flash.message}">
