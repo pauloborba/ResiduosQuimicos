@@ -8,7 +8,8 @@
 <div id="estatistica-content" class="content scaffold-list" role="main">
     <div id="percentual-content">
         <label for="percent-message">Distribuição dos Residuos:</label>
-        <textField id ="percent-message"> Até o presente momento ${percentualResiduo}% dos laboratórios cadastrados no sistema tem resíduos disponíveis para coleta</textField>
+
+        <textField id ="percent-message"><g:message code="message.title.estatisticas.percentagemMessage" args="[percentualResiduo]" /></textField>
     </div>
 
     <div id="maior-gerador-content">
