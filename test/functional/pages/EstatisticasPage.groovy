@@ -15,7 +15,9 @@ class EstatisticasPage extends Page{
 
     boolean eOmaiorGerador(String nomeLab){
         def lab = Laboratorio.findByNomeLaboratorio(nomeLab)
-        $('textField#maiorGerador-message').text() == "O laboratório que mais gerou resíduos é o "+lab.nomeLaboratorio+", que é do departamento "+lab.nomeDepartamento+" e do Centro "+lab.nomeCentro
+        InternationalizationHelper helper = InternationalizationHelper.instance
+        String messageMaiorGerador = helper.getMessage("message.title.estatisticas.maiorGerador", lab.nomeLaboratorio, lab.nomeDepartamento, lab.nomeCentro)
+        $('textField#maiorGerador-message').text() ==~ messageMaiorGerador
     }
 
 

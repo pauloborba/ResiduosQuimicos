@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta name="layout" content="main"/>
-    <title>Relatórios</title> <!-- Verificar se é o melhor jeito de fazer -->
+    <title><g:message code="default.title.page.indexStatus" /></title>
     <style type="text/css" media="screen">
     #status {
         background-color: #eee;

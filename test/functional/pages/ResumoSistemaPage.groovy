@@ -1,8 +1,8 @@
 package pages
 
 import geb.Page
+import residuosquimicos.NomesDeLaboratorios
 import steps.InternationalizationHelper
-import src.groovy.LaboratorioList
 
 class ResumoSistemaPage extends Page{
     static url = "/ResiduosQuimicos/status/resumoSistema/"
@@ -13,20 +13,23 @@ class ResumoSistemaPage extends Page{
     }
 
     boolean hasErrorMessageLaboratorioNaoCadastrado(){
-        $('div#resumo-content label#errorMessage').text() == "O sistema ainda não possui labóratorios para exibir ou os laboratórios não possuem resíduos cadastrados"
+        InternationalizationHelper helper = InternationalizationHelper.instance
+        String messageNaoPossuiLab= helper.getMessage("message.title.resumoSistema.naoPossuiLab")
+        $('div#resumo-content label#errorMessage').text() ==~ messageNaoPossuiLab
     }
 
     boolean hasMessageLicitacaoNecessaria(){
-        $('textField#status-message').text() == "Uma licitaçao é necessaria para recolher os resíduos nos Laboratorios"
+        InternationalizationHelper helper = InternationalizationHelper.instance
+        String messageLicitacao = helper.getMessage("message.title.statusGeral.positive")
+        $('textField#status-message').text() ==~ messageLicitacao
     }
 
     //verifica se existe uma linha na tabela correspondente as informações passadas como parâmetro
     boolean hasLinhaNaTabela(String nomeResiduo, String peso, String nomeLaboratorio){
-
         def rows = $('table#table-residuos').find('tbody').find('tr')
 
         def test = rows.find {row ->
-            $(row).find('th').eq(0).text() == LaboratorioList.valueOf(LaboratorioList.class, nomeLaboratorio).value &&
+            $(row).find('th').eq(0).text() == NomesDeLaboratorios.valueOf(NomesDeLaboratorios.class, nomeLaboratorio).value &&
             $(row).find('td').eq(0).text() == nomeResiduo &&
             Double.parseDouble($(row).find('td').eq(1).text()) == Double.parseDouble(peso)
         }

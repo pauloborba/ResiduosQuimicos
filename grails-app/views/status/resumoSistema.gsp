@@ -7,7 +7,13 @@
 <body>
 <div id="resumo-content" class="content scaffold-list" role="main">
     <label for="status-message">Status do Sistema:</label>
-    <textField id ="status-message">${statusGeral}</textField>
+    <g:if test="${necessarioColeta == true}">
+        <textField id ="status-message"><g:message code="message.title.statusGeral.positive" /></textField>
+    </g:if>
+    <g:else>
+        <textField id ="status-message"><g:message code="message.title.statusGeral.negative" /></textField>
+    </g:else>
+
     <g:if test="${laboratorios != []}">
         <table id="table-residuos">
             <thead>
@@ -41,7 +47,7 @@
         </table>
     </g:if>
     <g:else>
-        <label id="errorMessage">O sistema ainda não possui labóratorios para exibir ou os laboratórios não possuem resíduos cadastrados</label>
+        <label id="errorMessage"><g:message code="message.title.resumoSistema.naoPossuiLab" /></label>
     </g:else>
 
 
