@@ -19,10 +19,10 @@ Feature: Administrador do sistema
     Then eu devo visualizar uma mensagem de erro informando que o sistema não possui laboratórios
 
   Scenario: verificar necessidade de coleta de resíduos na UFPE
-    Given eu criei o laboratório "LABORATORIO_DE_ENFERMAGEM" no departamento "DEPARTAMENTO_DE_ENFERMAGEM" e centro "CCS"
-    And eu criei o laboratório "LABORATORIO_DE_BIOTECNOLOGIA_BIOQUIMICA" no departamento "DEPARTAMENTO_DE_BIOQUIMICA" e centro "CB"
-    And eu criei o resíduo "Descartáveis em geral" com peso "4000,0" associado ao laboratório "LABORATORIO_DE_ENFERMAGEM"
-    And eu criei o resíduo "Compostos químicos" com peso "3700,0" associado ao laboratório "LABORATORIO_DE_BIOTECNOLOGIA_BIOQUIMICA"
+    Given eu criei o laboratório "LAMAI" no departamento "DEPARTAMENTO_DE_ANTIBIOTICOS" e centro "CCS"
+    And eu criei o laboratório "BIOPROT_1" no departamento "DEPARTAMENTO_DE_BIOQUIMICA" e centro "CCS"
+    And eu criei o resíduo "Compostos químicos" com peso "4000,0" associado ao laboratório "LAMAI"
+    And eu criei o resíduo "Resíduo sólido" com peso "4600,0" associado ao laboratório "BIOPROT_1"
     When eu vou para a página de resumo do sistema
     Then eu devo visualizar uma mensagem informando que é necessário fazer uma licitação
 
@@ -34,30 +34,10 @@ Feature: Administrador do sistema
     When eu vou para a página de estatísticas
     Then eu devo visualizar que o laboratório "LABORATORIO_DE_ENFERMAGEM" é o maior gerador de resíduos
 
-#NEW Scenarios
   Scenario: buscar pelo laboratório com maior geração de resíduos (negativo)
     Given o sistema não possui nenhum laboratório cadastrado
     When eu vou para a página de estatísticas
     Then eu devo visualizar uma mensagem de erro informando que o sistema não possui laboratórios
-
-  Scenario: gerar lista de resíduos de um laboratório específico
-    Given eu criei o laboratório "LABORATORIO_DE_ENFERMAGEM" no departamento "DEPARTAMENTO_DE_ENFERMAGEM" e centro "CCS"
-    And eu criei o resíduo "Descartáveis em geral" com peso "4000,0" associado ao laboratório "LABORATORIO_DE_ENFERMAGEM"
-    And eu criei o resíduo "Compostos químicos" com peso "3700,0" associado ao laboratório "LABORATORIO_DE_ENFERMAGEM"
-    When eu vou para página de gerar relatórios de um laboratório específico
-    And eu seleciono o laboratório "LABORATORIO_DE_ENFERMAGEM" na lista de laboratórios
-    And seleciono gerar relatório
-    Then eu devo visualizar o resíduo "Descartáveis em geral" com peso "4000" associado ao laboratório "LABORATORIO_DE_ENFERMAGEM"
-    And eu devo visualizar o resíduo "Compostos químicos" com peso "3700" associado ao laboratório "LABORATORIO_DE_BIOTECNOLOGIA_BIOQUIMICA"
-
-  Scenario: mostrar peso agregado associado a um laboratório específico
-    Given eu criei o laboratório "LABORATORIO_DE_ENFERMAGEM" no departamento "DEPARTAMENTO_DE_ENFERMAGEM" e centro "CCS"
-    And eu criei o resíduo "Descartáveis em geral" com peso "4000,0" associado ao laboratório "LABORATORIO_DE_ENFERMAGEM"
-    And eu criei o resíduo "Compostos químicos" com peso "3700,0" associado ao laboratório "LABORATORIO_DE_ENFERMAGEM"
-    When eu vou para página de gerar relatórios de um laboratório específico
-    And eu seleciono o laboratório "LABORATORIO_DE_ENFERMAGEM" na lista de laboratórios
-    And seleciono gerar relatório
-    Then eu devo visualizar que o peso agregado ao laboratório é "6700" kilogramas
 
 #CONTROLLER
   Scenario: buscar percentual de laboratórios com resíduos cadastrados
