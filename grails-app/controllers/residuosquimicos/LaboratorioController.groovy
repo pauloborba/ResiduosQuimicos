@@ -99,4 +99,13 @@ class LaboratorioController {
             '*'{ render status: NOT_FOUND }
         }
     }
+
+    def registrarNovoLaboratorio(){
+    }
+
+    def saveNameFile(){
+        FileHelper.criarLaboratorio(params.nome)
+        flash.message = 'O laboratório foi registrado na lista de existentes'
+        redirect action: 'create', controller: 'laboratorio'
+    }
 }

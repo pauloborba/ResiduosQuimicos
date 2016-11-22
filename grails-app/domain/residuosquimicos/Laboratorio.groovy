@@ -4,7 +4,8 @@ package residuosquimicos
 class Laboratorio {
     NomesDeCentros nomeCentro
     NomesDeDepartamentos nomeDepartamento
-    NomesDeLaboratorios nomeLaboratorio
+    //alter
+    String nomeLaboratorio
     Usuario solicitante
     Usuario responsavel
     static hasMany = [residuos:Residuo]

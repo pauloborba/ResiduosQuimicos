@@ -1,4 +1,4 @@
-<%@ page import="residuosquimicos.Laboratorio" %>
+<%@ page import="residuosquimicos.FileHelper; residuosquimicos.Laboratorio" %>
 
 
 
@@ -25,7 +25,7 @@
 		<g:message code="laboratorio.nomeLaboratorio.label" default="Nome Laboratorio" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:select name="nomeLaboratorio" from="${residuosquimicos.NomesDeLaboratorios?.values()}" keys="${residuosquimicos.NomesDeLaboratorios.values()*.name()}" required="" value="${laboratorioInstance?.nomeLaboratorio?.name()}" />
+	<g:select name="nomeLaboratorio" from="${residuosquimicos.FileHelper?.retrieveLaboratorios()}" required="" value="${laboratorioInstance?.nomeLaboratorio}" />
 
 </div>
 
