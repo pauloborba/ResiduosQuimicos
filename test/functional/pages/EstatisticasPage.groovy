@@ -3,7 +3,6 @@ package pages
 import geb.Page
 import residuosquimicos.Laboratorio
 import steps.InternationalizationHelper
-import src.groovy.LaboratorioList
 
 class EstatisticasPage extends Page{
     static url = "/ResiduosQuimicos/status/estatisticas/"

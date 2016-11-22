@@ -29,7 +29,7 @@ class ResumoSistemaPage extends Page{
         def rows = $('table#table-residuos').find('tbody').find('tr')
 
         def test = rows.find {row ->
-            $(row).find('th').eq(0).text() == NomesDeLaboratorios.valueOf(NomesDeLaboratorios.class, nomeLaboratorio).value &&
+            $(row).find('th').eq(0).text() == nomeLaboratorio &&
             $(row).find('td').eq(0).text() == nomeResiduo &&
             Double.parseDouble($(row).find('td').eq(1).text()) == Double.parseDouble(peso)
         }

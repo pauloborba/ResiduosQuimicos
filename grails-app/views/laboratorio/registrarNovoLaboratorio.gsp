@@ -1,20 +1,18 @@
 <html>
 <head>
     <meta name="layout" content="main">
-    <title>Registrar um novo laboratório</title>
+    <title><g:message code="default.title.page.registrarLaboratorio" /></title>
 </head>
 
 <body>
     <div id="createnewLab-content" class="content scaffold-list" role="main">
         <g:form url="[action:'saveNameFile']" >
             <fieldset class="form">
-                <label for="nomeLaboratorio">
-                    <g:message code="lab.nome" default="Nome do novo Laboratório: " />
-                </label>
-                <g:textField name="nome" required=""/>
+                <label for="nomeLaboratorio">Nome do novo Laboratório</label>
+                <g:textField name="nomeLaboratorio" required=""/>
             </fieldset>
             <fieldset class="buttons">
-                <g:submitButton name="create" value="${message(code: 'x', default: 'Salvar')}" />
+                <g:submitButton name="create" value="${message(code: 'save.button.message', default: 'Salvar')}" />
             </fieldset>
         </g:form>
     </div>
