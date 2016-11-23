@@ -4,49 +4,10 @@ class StatusController {
     def index() { }
 
     def resumoSistema(){
-        [necessarioColeta:eNecessarioColeta(), laboratorios:Laboratorio.all.findAll {!it.residuos.isEmpty()}]
+        [necessarioColeta:AuxiliarMethodHelper.eNecessarioColeta(), laboratorios:Laboratorio.all.findAll {!it.residuos.isEmpty()}]
     }
 
     def estatisticas(){
-        [percentualResiduo:percentagemLaboratoriosResiduos(), maiorGeradorDeResiduos:maiorLaboratorioGeradorDeResiduos()]
+        [percentualResiduo:AuxiliarMethodHelper.percentagemLaboratoriosResiduos(), maiorGeradorDeResiduos:AuxiliarMethodHelper.maiorLaboratorioGeradorDeResiduos()]
     }
-
-    def eNecessarioColeta(){
-        double pesoAgregado = 0
-        Residuo.all.each {pesoAgregado+= it.peso}
-        pesoAgregado >= 7500
-    }
-
-    def percentagemLaboratoriosResiduos (){
-        double laboratoriosComResiduos = 0
-        double totalLaboratorios = Laboratorio.all.size()
-
-        if(totalLaboratorios != 0) {
-            Laboratorio.all.each { laboratorio ->
-                if (!laboratorio.residuos.isEmpty()) {
-                    laboratoriosComResiduos += 1
-                }
-            }
-
-            def percentual = laboratoriosComResiduos / totalLaboratorios
-            return (percentual * 100)
-        }
-        return 0
-    }
-
-    def maiorLaboratorioGeradorDeResiduos(){
-        if(!Laboratorio.all.empty){
-            Laboratorio maiorGerador = Laboratorio.all.get(0)
-            Laboratorio.all.each { laboratorio ->
-                def pesoCurrentLab = maiorGerador.pesoResiduosAgregadosAoLaboratorio()
-                def pesoCandidato = laboratorio.pesoResiduosAgregadosAoLaboratorio()
-
-                if(pesoCandidato>pesoCurrentLab){
-                    maiorGerador = laboratorio
-                }
-            }
-            return maiorGerador
-        }
-    }
-
 }
