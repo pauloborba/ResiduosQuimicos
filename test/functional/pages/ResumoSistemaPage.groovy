@@ -1,7 +1,6 @@
 package pages
 
 import geb.Page
-import residuosquimicos.NomesDeLaboratorios
 import steps.InternationalizationHelper
 
 class ResumoSistemaPage extends Page{
