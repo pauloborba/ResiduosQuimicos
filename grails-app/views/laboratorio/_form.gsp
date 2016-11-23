@@ -1,7 +1,6 @@
 <%@ page import="residuosquimicos.FileHelper; residuosquimicos.Laboratorio" %>
 
 
-
 <div class="fieldcontain ${hasErrors(bean: laboratorioInstance, field: 'nomeCentro', 'error')} required">
 	<label for="nomeCentro">
 		<g:message code="laboratorio.nomeCentro.label" default="Nome Centro" />
