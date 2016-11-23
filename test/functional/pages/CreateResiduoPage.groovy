@@ -4,6 +4,8 @@ import geb.Page
 import residuosquimicos.Laboratorio
 import steps.InternationalizationHelper
 
+import java.text.NumberFormat
+
 class CreateResiduoPage extends Page{
     static url = "/ResiduosQuimicos/residuo/create/"
     static at = {
@@ -14,9 +16,10 @@ class CreateResiduoPage extends Page{
     }
 
     def createResiduo(String nomeResiduo, String pesoResiduo, String nomeLaboratorio){
+        NumberFormat nf = NumberFormat.getInstance(new Locale("pt","BR"));
         $('input#nome').value(nomeResiduo)
         $('input#descricao').value("Padrão")
-        $('input#peso').value(pesoResiduo)
+        $('input#peso').value(nf.parse(pesoResiduo))
         $('select#laboratorio').value(Laboratorio.findByNomeLaboratorio(nomeLaboratorio).id)
         $('#create-residuo input#create').click()
     }

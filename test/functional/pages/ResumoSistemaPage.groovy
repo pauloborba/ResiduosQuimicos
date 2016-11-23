@@ -3,6 +3,8 @@ package pages
 import geb.Page
 import steps.InternationalizationHelper
 
+import java.text.NumberFormat
+
 class ResumoSistemaPage extends Page{
     static url = "/ResiduosQuimicos/status/resumoSistema/"
     static at = {
@@ -25,13 +27,15 @@ class ResumoSistemaPage extends Page{
 
     //verifica se existe uma linha na tabela correspondente as informações passadas como parâmetro
     boolean hasLinhaNaTabela(String nomeResiduo, String peso, String nomeLaboratorio){
+        NumberFormat nf = NumberFormat.getInstance(new Locale("pt","BR"));
         def rows = $('table#table-residuos').find('tbody').find('tr')
 
-        def test = rows.find {row ->
+        def test = rows.find { row ->
             $(row).find('th').eq(0).text() == nomeLaboratorio &&
             $(row).find('td').eq(0).text() == nomeResiduo &&
-            Double.parseDouble($(row).find('td').eq(1).text()) == Double.parseDouble(peso)
+            Double.parseDouble($(row).find('td').eq(1).text()) == nf.parse(peso).doubleValue()
         }
+
         return test != null
     }
 }
