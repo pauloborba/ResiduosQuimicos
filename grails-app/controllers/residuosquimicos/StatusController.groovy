@@ -8,6 +8,23 @@ class StatusController {
     }
 
     def estatisticas(){
-        [percentualResiduo:AuxiliarMethodHelper.percentagemLaboratoriosResiduos(), maiorGeradorDeResiduos:AuxiliarMethodHelper.maiorLaboratorioGeradorDeResiduos()]
+        [percentualResiduo:percentagemLaboratoriosResiduos(), maiorGeradorDeResiduos:AuxiliarMethodHelper.maiorLaboratorioGeradorDeResiduos()]
+    }
+
+    def percentagemLaboratoriosResiduos (){
+        double laboratoriosComResiduos = 0
+        double totalLaboratorios = Laboratorio.all.size()
+
+        if(totalLaboratorios != 0) {
+            Laboratorio.all.each { laboratorio ->
+                if (!laboratorio.residuos.isEmpty()) {
+                    laboratoriosComResiduos += 1
+                }
+            }
+
+            def percentual = laboratoriosComResiduos / totalLaboratorios
+            return (percentual * 100)
+        }
+        return 0
     }
 }

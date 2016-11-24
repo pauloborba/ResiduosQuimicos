@@ -8,7 +8,6 @@ import pages.IndexLaboratorioPage
 import pages.ResumoSistemaPage
 import pages.ShowLaboratorioPage
 import pages.ShowResiduoPage
-import residuosquimicos.AuxiliarMethodHelper
 import residuosquimicos.Laboratorio
 import residuosquimicos.LaboratorioController
 import residuosquimicos.Residuo
@@ -92,7 +91,8 @@ def criarResiduo(String nomeResiduo, double peso, String nomeLab){
 
 double percentagemlaboratorio = 0.0
 When(~/^eu tento verificar o percentual de laboratorios com resíduos cadastrado$/) { ->
-    percentagemlaboratorio = AuxiliarMethodHelper.percentagemLaboratoriosResiduos()
+    def statusController = new StatusController()
+    percentagemlaboratorio = statusController.percentagemLaboratoriosResiduos()
 }
 Then(~/^o percentual retornado pelo sistema será "([^"]*)" por cento$/) { double percentagem ->
     assert percentagemlaboratorio == percentagem
