@@ -9,7 +9,6 @@ class FileHelper {
     }
 
     public static String[] retrieveLaboratorios(){
-        String[] nomesLaboratorios = file.text.split("\n")
-        return nomesLaboratorios
+        return file.text.split("\n")
     }
 }

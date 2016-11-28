@@ -12,7 +12,7 @@
                 <g:textField name="nomeLaboratorio" required=""/>
             </fieldset>
             <fieldset class="buttons">
-                <g:submitButton name="create" value="${message(code: 'save.button.message', default: 'Salvar')}" />
+                <g:submitButton name="create" value="${message(code: 'default.button.create.label', default: 'Criar')}" />
             </fieldset>
         </g:form>
     </div>

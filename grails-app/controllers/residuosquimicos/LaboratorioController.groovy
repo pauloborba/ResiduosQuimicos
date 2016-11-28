@@ -105,7 +105,7 @@ class LaboratorioController {
 
     def saveNameFile(){
         FileHelper.criarLaboratorio(params.nomeLaboratorio)
-        flash.message = 'O laboratório foi registrado na lista de existentes'
+        flash.message = message(code:"message.registerLaboratorySuccess")
         redirect action: 'create', controller: 'laboratorio'
     }
 }

@@ -12,10 +12,7 @@ class AuxiliarMethodHelper {
         if(!Laboratorio.all.empty){
             Laboratorio maiorGerador = Laboratorio.all.get(0)
             Laboratorio.all.each { laboratorio ->
-                def pesoCurrentLab = maiorGerador.pesoResiduosAgregadosAoLaboratorio()
-                def pesoCandidato = laboratorio.pesoResiduosAgregadosAoLaboratorio()
-
-                if(pesoCandidato>pesoCurrentLab){
+                if(laboratorio.pesoResiduosAgregadosAoLaboratorio()>maiorGerador.pesoResiduosAgregadosAoLaboratorio()){
                     maiorGerador = laboratorio
                 }
             }
