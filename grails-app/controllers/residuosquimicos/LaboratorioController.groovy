@@ -8,6 +8,27 @@ import grails.transaction.Transactional
 @Transactional(readOnly = true)
 class LaboratorioController {
 
+
+    /**
+     * método setFacilitador --> aprova uma solicitacao de acesso a laboratorio feita por um facilitador
+     * @param adm
+     * nome do administrador que aprovou
+     * @param lab
+     * laboratorio associado ao facilitador
+     * @param fac
+     * facilitador que teve solicitacao aprovada
+     */
+    def setFacilitador(Usuario adm, Laboratorio lab, Usuario fac)
+    {
+        //aprovar caso facilitador esteja desvinculado a laboratorios:
+        if(!fac.associado)
+        {
+            lab.setResponsavel(fac)
+            fac.setAssociado(true)
+        }
+        else return false
+    }
+
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
         respond Laboratorio.list(params), model:[laboratorioInstanceCount: Laboratorio.count()]

@@ -1,4 +1,4 @@
-<%@ page import="residuosquimicos.Usuario" %>
+<%@ page import="residuosquimicos.TiposDeUsuario; residuosquimicos.Usuario" %>
 
 
 

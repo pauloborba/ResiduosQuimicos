@@ -71,10 +71,9 @@ Given(~/^o sistema possui o laboratório "([^"]*)" com departamento "([^"]*)" e 
 
 
 def criarLaboratorio(String nomeLab, String nomeDep, String nomeCentro){
-    def lab = new Laboratorio([nomeCentro:nomeCentro, nomeDepartamento:nomeDep, nomeLaboratorio:nomeLab, solicitante: null, responsavel:null, solicitado:false])
-
     def controlador = new LaboratorioController()
-    controlador.save(lab)
+   // def lab = new Laboratorio([nomeCentro:nomeCentro, nomeDepartamento:nomeDep, nomeLaboratorio:nomeLab, solicitante: null, responsavel:null, solicitado:false])
+    controlador.save(new Laboratorio([nomeCentro:nomeCentro, nomeDepartamento:nomeDep, nomeLaboratorio:nomeLab, solicitante: null, responsavel:null, solicitado:false]))
     controlador.response.reset()
 }
 
@@ -85,7 +84,7 @@ And(~/^o sistema possui o resíduo "([^"]*)" com peso "([^"]*)" associado ao lab
 
 def criarResiduo(String nomeResiduo, double peso, String nomeLab){
     def controlador = new ResiduoController()
-    controlador.save(new Residuo([nome:nomeResiduo, composicao:"None", peso:peso, pessoaGerador:"None", dataCadastro:new Date(), laboratorio:Laboratorio.findByNomeLaboratorio(nomeLab)]))
+    controlador.save(new Residuo([nome:nomeResiduo, composicao:"None", peso:peso, pessoaGerador:"None", dataCadastro:new Date(System.currentTimeMillis()), laboratorio:Laboratorio.findByNomeLaboratorio(nomeLab)]))
     controlador.response.reset()
 }
 

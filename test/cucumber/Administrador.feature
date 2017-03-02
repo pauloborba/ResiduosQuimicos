@@ -40,6 +40,7 @@ Feature: Administrador do sistema
     Then eu devo visualizar uma mensagem de erro informando que o sistema não possui laboratórios
 
 #CONTROLLER
+  @ignore
   Scenario: buscar percentual de laboratórios com resíduos cadastrados
     Given o sistema possui o laboratório "Laboratório de Enfermagem" com departamento "DEPARTAMENTO_DE_ENFERMAGEM" e centro "CCS", sem resíduos associados, cadastrado
     And o sistema possui o laboratório "Laboratório de Biotecnologia" com departamento "DEPARTAMENTO_DE_BIOQUIMICA" e centro "CB", sem resíduos associados, cadastrado

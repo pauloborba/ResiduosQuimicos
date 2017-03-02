@@ -8,11 +8,10 @@ import grails.transaction.Transactional
 @Transactional(readOnly = true)
 class UsuarioController {
 
-    static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
-        respond Usuario.list(params), model:[usuarioInstanceCount: Usuario.count()]
+        respond Usuario.list(params), model: [usuarioInstanceCount: Usuario.count()]
     }
 
     def show(Usuario usuarioInstance) {
@@ -22,7 +21,34 @@ class UsuarioController {
     def create() {
         respond new Usuario(params)
     }
+    //#if SolicitacaoDeAcesso
+    /**
+     * método auxiliar para funcionamento da view Overview de Usuario
+     * permite que o usuário solicite um laboratório clicando em algum que estiver disponível
+     */
+    def overview()
+    {}
+    /**
+     * Metodo solicitarLab
+     * Uma vez presente na Page Overview, o usuário pode solicitar acesso a um laboratório
+     * @param laboratorioInstance
+     * Laboratorio disponível
+     * @param usuarioInstance
+     * Usuario facilitador que deve realizar solicitação
+     *
+     */
+    def solicitarAssociacao(Laboratorio lab, Usuario fac)
+    {
+        if(!lab.estaSolicitado() && !fac.associado) //se lab nao esta solicitado e usuario nao esta associado
+        {
+            lab.setSolicitante(fac)
+            flash.message = message(code: 'message.title.associacao.confirm', args: [lab.nomeLaboratorio, fac.nome])
+            redirect(action: "overview")
+        }
+        else return false
 
+    }
+    //#end
     @Transactional
     def save(Usuario usuarioInstance) {
         if (usuarioInstance == null) {
