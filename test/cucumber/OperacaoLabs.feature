@@ -3,7 +3,6 @@ Feature: Operar com laboratorios disponíveis no sistema.
   I want to realizar operações com os laboratórios cadastrados
   so that i possa realizar cadastramento de resíduos no sistema
 #CONTROLLER
-
   Scenario: Solicitação de acesso a laboratórios por usuário do tipo Facilitador
     Given "Pedro" não possui associação a nenhum laboratório cadastrado
     And os laboratórios "Laboratório de Etnofarmacologia Aplicada - LEA" e "Laboratório de Microbiologial Industrial e Ambiental - LAMAI" do centro "CB" e dept "DEPARTAMENTO_DE_ANTIBIOTICOS" estão disponíveis para associação
@@ -24,7 +23,6 @@ Feature: Operar com laboratorios disponíveis no sistema.
     When eu tento associar "Marcos" ao laboratório "Laboratório de Anatomia E"
     Then eu posso ver uma mensagem de confirmação indicando a solicitação de "Marcos"
 
-  @ignore
   Scenario: Tentativa de associação de usuário Administrador a laboratório
     Given eu criei o usuário do tipo administrador "Maria"
     When eu tento criar o laboratório "Laboratório de Anatomia E" do centro "CB" e dept "DEPARTAMENTO_DE_ANTIBIOTICOS" associado a "Maria"

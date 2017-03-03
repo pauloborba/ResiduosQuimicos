@@ -1,6 +1,7 @@
 package pages
 
 import geb.Page
+import residuosquimicos.Usuario
 import steps.InternationalizationHelper
 
 class CreateLaboratorioPage extends Page {
@@ -19,4 +20,17 @@ class CreateLaboratorioPage extends Page {
         $('#create-laboratorio input#create').click()
     }
 
+    def createLabAssociado(String nomeLab, String nomeDep, String nomeCentro, String nomeUsuario)
+    {
+        $('select#nomeCentro').value(nomeCentro)
+        $('select#nomeDepartamento').value(nomeDep)
+        $('select#nomeLaboratorio').value(nomeLab)
+        $('select#responsavel').value(Usuario.findByNome(nomeUsuario).id)
+        $('#create-laboratorio input#create').click()
+    }
+
+    boolean existeMensagemDeErroUsuarioAdministrador(String admin)
+    {
+        $("div", class: "message").text().contains(admin)
+    }
 }

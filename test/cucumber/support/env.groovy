@@ -19,9 +19,8 @@ Before() {
 After() {
     Residuo.list().each { it.delete(flush: true, failOnError:true) }
     Laboratorio.list().each { it.delete(flush: true, failOnError:true) }
+    Usuario.list().each { it.delete(flush: true, failOnError:true) }
 
     scenarioInterceptor.destroy()
     bindingUpdater.remove()
-
-
 }

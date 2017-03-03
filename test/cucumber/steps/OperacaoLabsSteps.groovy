@@ -1,8 +1,8 @@
-//import cucumber.api.PendingException
-/*import pages.CreateUserPage
+import cucumber.api.PendingException
+import pages.CreateUserPage
 import pages.IndexUsuarioPage
 import pages.OverviewUsuarioPage
-import pages.ShowUserPage*/
+import pages.ShowUserPage
 import residuosquimicos.Laboratorio
 import residuosquimicos.LaboratorioController
 import residuosquimicos.Usuario
@@ -143,8 +143,6 @@ def tentarSolicitarAcesso(Usuario fac)
 }
 
 //GUI SCENARIOS
-//testar parametros
-
 def createLaboratorioAndCheck(String nomeLab, String nomeDep, String nomeCentro){
     to CreateLaboratorioPage
     at CreateLaboratorioPage
@@ -196,6 +194,5 @@ When(~/^eu tento associar "([^"]*)" ao laboratório "([^"]*)"$/) { String fac, S
 
 Then(~/^eu posso ver uma mensagem de confirmação indicando a solicitação de "([^"]*)"$/) {
     String fac ->
-    at OverviewUsuarioPage
         assert page.existeMensagemDeConfirmacao(fac)
 }
